@@ -30,3 +30,10 @@
 *.exe
 *.out
 *.app
+
+# Exclude data and plots
+data/
+plots/
+*.root
+*.pdf
+*.png
