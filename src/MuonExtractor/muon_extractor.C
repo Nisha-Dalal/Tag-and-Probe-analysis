@@ -61,13 +61,13 @@ void muon_extractor() {
     }
 
     if (chain->GetNtrees() == 0 || chain->GetEntries() == 0) {
-        std::cerr << "❌ Error: No valid input files or entries found!" << std::endl;
+        std::cerr << "Error: No valid input files or entries found!" << std::endl;
         delete chain;
         return;
     }
 
     Long64_t total_events = chain->GetEntries();
-    std::cout << "📊 Total number of events: " << total_events << std::endl;
+    std::cout << "Total number of events: " << total_events << std::endl;
 
     // Disable all branches, then enable only selected ones
     chain->SetBranchStatus("*", 0);
@@ -81,7 +81,7 @@ void muon_extractor() {
     // Create output file
     TFile *output_file = new TFile("D:/ROOTFiles/DataFiles/Muons.root", "RECREATE");
     if (!output_file || output_file->IsZombie()) {
-    std::cerr << "❌ Error: Could not create Muons.root at D:/ROOTFiles/DataFiles/" << std::endl;
+    std::cerr << "Error: Could not create Muons.root at D:/ROOTFiles/DataFiles/" << std::endl;
     delete chain;
     return;
 }
@@ -114,7 +114,7 @@ void muon_extractor() {
         }
     }
 
-    std::cout << "\n✅ Number of events passed basic cuts: " << passed_events << std::endl;
+    std::cout << "\n Number of events passed basic cuts: " << passed_events << std::endl;
 
     output_tree->SetBasketSize("*", 8000);
     output_tree->Write("", TObject::kOverwrite);
@@ -123,5 +123,5 @@ void muon_extractor() {
     delete chain;
     delete output_file;
 
-    std::cout << "\n🎯 Muon branches successfully extracted to Muons.root\n";
+    std::cout << "\n Muon branches successfully extracted to Muons.root\n";
 }
