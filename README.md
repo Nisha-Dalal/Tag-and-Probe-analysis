@@ -12,3 +12,5 @@ src/
 data/                   # ROOT files (git-ignored)
 plots/                  # Output plots (git-ignored)
 ```
+# Compile and run
+root -l -q src/TagAndProbe/tag_and_probe_analysis.C
