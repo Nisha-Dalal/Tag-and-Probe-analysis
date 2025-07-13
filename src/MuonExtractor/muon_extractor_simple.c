@@ -8,7 +8,7 @@ void muon_extractor_simple() {
     chain->Add("D:/ROOTFiles/DataFiles/14B6A8AE-C9FE-D744-80A4-DDE5D008C1CD.root");
 
     if (chain->GetNtrees() == 0 || chain->GetEntries() == 0) {
-        std::cerr << "❌ Error: No valid input files or entries found!" << std::endl;
+        std::cerr << "Error: No valid input files or entries found!" << std::endl;
         delete chain;
         return;
     }
@@ -21,7 +21,7 @@ void muon_extractor_simple() {
 
     TFile *output_file = new TFile("Muons_simple.root", "RECREATE");
     if (!output_file || output_file->IsZombie()) {
-        std::cerr << "❌ Error: Could not create Muons_simple.root" << std::endl;
+        std::cerr << "Error: Could not create Muons_simple.root" << std::endl;
         delete chain;
         return;
     }
@@ -29,7 +29,7 @@ void muon_extractor_simple() {
     output_file->cd();
     TTree *output_tree = chain->CloneTree(-1, "fast");
     if (!output_tree) {
-        std::cerr << "❌ Error: Failed to clone tree" << std::endl;
+        std::cerr << "Error: Failed to clone tree" << std::endl;
         delete chain;
         delete output_file;
         return;
@@ -41,5 +41,5 @@ void muon_extractor_simple() {
     delete chain;
     delete output_file;
 
-    std::cout << "\n✅ Muon branches successfully extracted to Muons_simple.root\n";
+    std::cout << "\nMuon branches successfully extracted to Muons_simple.root\n";
 }
