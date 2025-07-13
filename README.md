@@ -5,3 +5,8 @@
 > Muon identification/isolation efficiency measurement using CMS NanoAOD
 
 ## Repository Structure
+src/
+├── MuonExtractor/      # Muon selection from NanoAOD
+├── TagAndProbe/        # Efficiency calculations
+data/                   # ROOT files (git-ignored)
+plots/                  # Output plots (git-ignored)
