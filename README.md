@@ -21,7 +21,7 @@ If you use this work in your research, please cite:
 
 ```bibtex
 @software{TagAndProbeAnalysis,
-  author = {Dalal, Nisha},
+  author = {Nisha},
   title = {Tag-and-Probe Muon Efficiency Analysis},
   year = {2024},
   publisher = {GitHub},
